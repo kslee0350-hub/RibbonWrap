@@ -1,5 +1,5 @@
 {
-  "version": "4.0",
+  "version": "4.1",
   "url": "https://github.com/kslee0350-hub/RibbonWrap",
-  "notes": "Spherical 감기 모드 추가 (구형 오브젝트용)"
+  "notes": "Conical 감기 모드 추가 (Cone Taper)"
 }

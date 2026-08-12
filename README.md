@@ -1,8 +1,14 @@
 # RibbonWrap
 
-**최신 버전: v4.0** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
+**최신 버전: v4.1** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
 
 타겟 오브젝트 주위에 레이캐스트 방식으로 리본을 감아주는 C4D 제너레이터 플러그인. 표면 노멀 기반으로 리본 방향이 자동 정렬되어 Rail 스플라인 없이 표면에 밀착됩니다.
+
+## v4.1 변경사항
+
+- **Conical 감기 모드**: 반경이 진행 방향으로 선형 감소하고, 리본 면 방향이 원뿔 표면 기울기를 따라갑니다. Cone Taper로 끝단 크기(0% = 꼭짓점까지) 조절
+
+### 이전 버전
 
 ## v4.0 변경사항
 
@@ -66,6 +72,9 @@
 **Wrap Mode (Cylindrical / Spherical)**
 - Cylindrical: 축 방향 균등 분배 + 방사형 레이 (기본) — 총기, 기둥, 팔다리 등 길쭉한 오브젝트
 - Spherical: 극각 균등 분배 + 중심 방향 레이 — 구, 공, 헬멧 등 둥근 오브젝트. Growth 애니메이션이 극→극 나선으로 자라며, Coil Tilt와 Section Shape는 이 모드에서 무시됩니다. 가이드에 자오선 원이 추가 표시됩니다.
+- Conical: 감김 반경이 진행 방향(Growth 방향)으로 선형 감소하고, 레이가 원뿔 표면의 법선 방향으로 기울어 발사되어 리본 면이 경사면을 따라갑니다. 원뿔·첨탑·아이스크림콘 형태에 사용. Section Shape(Capsule)와 조합 가능.
+
+**Cone Taper (End Size)** — Conical 모드 전용. 끝단 크기를 시작 크기 대비 %로 지정 (0% = 꼭짓점, 50% = 절반 굵기, 100% = 원통과 동일). 가이드 박스의 끝단 단면이 이 값에 맞춰 표시됩니다.
 
 **Section Shape (Ellipse / Capsule)**
 감김 단면의 모양.
@@ -201,6 +210,7 @@ Octane 팁: 반복 텍스처는 Image Texture의 Border mode를 Wrap around로. 
 
 ## 버전 기록
 
+- v4.1 Conical 감기 모드
 - v4.0 Spherical 감기 모드
 - v3.9 그룹 이동 최적화, 수동 업데이트 확인 명령
 - v3.8 업데이트 알림 재작성, 자식 자동 인식 제거
