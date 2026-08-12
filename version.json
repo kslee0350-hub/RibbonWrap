@@ -1,5 +1,5 @@
 {
-  "version": "3.4",
+  "version": "3.5",
   "url": "https://github.com/kslee0350-hub/RibbonWrap",
-  "notes": "코일 겹침 자동 처리(Auto Layer Overlap), 리본 간 회피(Wrap Over Objects)"
+  "notes": "자식 오브젝트 자동 Wrap Over 인식 추가"
 }

@@ -1,8 +1,19 @@
-# RibbonWrap v3.0 — 사용 설명서
+# RibbonWrap
 
-Cinema 4D용 리본 감기 제너레이터 플러그인. 타겟 오브젝트 주위에 레이캐스트 방식으로 리본(또는 스플라인)을 감아주며, 표면 노멀 기반으로 리본 방향이 자동 정렬되어 Rail 스플라인 없이 리본이 표면에 밀착됩니다.
+**최신 버전: v3.5** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
 
-지원: Cinema 4D 2026.x (Python 3)
+타겟 오브젝트 주위에 레이캐스트 방식으로 리본을 감아주는 C4D 제너레이터 플러그인. 표면 노멀 기반으로 리본 방향이 자동 정렬되어 Rail 스플라인 없이 표면에 밀착됩니다.
+
+## v3.5 변경사항
+
+- **자식 오브젝트 자동 Wrap Over 인식**: Object Manager에서 오브젝트를 RibbonWrap의 자식으로 넣으면 자동으로 충돌 대상이 되어, 리본이 그 위를 타고 넘어갑니다 (리스트 방식과 병행 사용 가능)
+
+### 이전 버전 주요 기능
+
+- v3.4 — 코일 겹침 자동 처리(Auto Layer Overlap), 리본 간 회피(Wrap Over Objects)
+- v3.3 — Show Guide 체크박스
+- v3.2 — Capsule(알약형) 단면
+- v3.1 — 자동 업데이트 알림
 
 ---
 
@@ -10,9 +21,9 @@ Cinema 4D용 리본 감기 제너레이터 플러그인. 타겟 오브젝트 주
 
 1. C4D 종료
 2. 이전 버전 RibbonWrap 폴더가 있으면 **전부 삭제** (버전이 여러 개 있으면 ID 충돌로 구버전이 로드됨)
-3. `RibbonWrap_v3.0` 폴더를 plugins 폴더에 복사
+3. 압축 해제한 `RibbonWrap_vX.X` 폴더를 plugins 폴더에 복사
    - 예: `C:\Users\<사용자>\AppData\Roaming\Maxon\<C4D 버전>\plugins\`
-4. C4D 실행 → Python 콘솔(Shift+F10)에 `[RibbonWrap] v3.0 loading from: ...` 이 한 번 출력되면 정상
+4. C4D 실행 → Python 콘솔(Shift+F10)에 `[RibbonWrap] vX.X loading from: ...` 이 한 번 출력되면 정상 (버전은 설치본 기준)
 
 ## 빠른 시작
 
@@ -99,7 +110,9 @@ Cinema 4D용 리본 감기 제너레이터 플러그인. 타겟 오브젝트 주
 리본이 뒤집혀(안쪽을 향해) 보일 때 체크.
 
 **Wrap Over Objects**
-여기에 등록한 오브젝트의 지오메트리가 충돌 대상에 추가됩니다. 다른 RibbonWrap을 등록하면 이 리본이 그 리본 위를 타고 넘어가서 서로 관통하지 않습니다. 임의 메시(스트랩, 부착물 등)도 등록 가능.
+리본이 타고 넘어야 할 오브젝트를 지정하는 방법은 두 가지이며 함께 사용할 수 있습니다.
+1. **계층 방식(권장)**: Object Manager에서 해당 오브젝트(다른 RibbonWrap 포함)를 이 RibbonWrap의 자식으로 넣으면 자동으로 인식됩니다.
+2. **리스트 방식**: 여기에 등록한 오브젝트의 지오메트리가 충돌 대상에 추가됩니다. 다른 RibbonWrap을 등록하면 이 리본이 그 리본 위를 타고 넘어가서 서로 관통하지 않습니다. 임의 메시(스트랩, 부착물 등)도 등록 가능.
 주의: 반드시 한 방향으로만 참조하세요 (B가 A를 넘어가게 했으면, A에는 B를 넣지 말 것 — 순환 참조는 무한 갱신을 유발합니다).
 
 ## 파라미터 — Wrap / Animation 탭
@@ -171,6 +184,7 @@ Octane 팁: 반복 텍스처는 Image Texture의 Border mode를 Wrap around로. 
 
 ## 버전 기록
 
+- v3.5 자식 오브젝트 자동 Wrap Over 인식
 - v3.4 Auto Layer Overlap (코일 겹침 뱅킹), Wrap Over Objects (리본 간 회피)
 - v3.3 Show Guide 체크박스
 - v3.2 Capsule 단면 (알약형), 단면 가이드 표시
