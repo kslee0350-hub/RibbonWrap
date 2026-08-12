@@ -1,5 +1,5 @@
 {
-  "version": "3.6",
+  "version": "3.7",
   "url": "https://github.com/kslee0350-hub/RibbonWrap",
-  "notes": "업데이트 알림 다이얼로그 안정화, 자식 오브젝트 자동 Wrap Over 인식"
+  "notes": "부모 이동 시 실시간 와핑 갱신, 콜라이더 분리 캐싱"
 }
