@@ -1,15 +1,16 @@
 # RibbonWrap
 
-**최신 버전: v3.5** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
+**최신 버전: v3.6** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
 
 타겟 오브젝트 주위에 레이캐스트 방식으로 리본을 감아주는 C4D 제너레이터 플러그인. 표면 노멀 기반으로 리본 방향이 자동 정렬되어 Rail 스플라인 없이 표면에 밀착됩니다.
 
-## v3.5 변경사항
+## v3.6 변경사항
 
-- **자식 오브젝트 자동 Wrap Over 인식**: Object Manager에서 오브젝트를 RibbonWrap의 자식으로 넣으면 자동으로 충돌 대상이 되어, 리본이 그 위를 타고 넘어갑니다 (리스트 방식과 병행 사용 가능)
+- **업데이트 알림 다이얼로그 안정화**: C4D 시작 직후 알림 창이 뜨지 않던 문제 수정 (타이머 폴백 추가)
 
 ### 이전 버전 주요 기능
 
+- v3.5 — 자식 오브젝트 자동 Wrap Over 인식 (계층 방식)
 - v3.4 — 코일 겹침 자동 처리(Auto Layer Overlap), 리본 간 회피(Wrap Over Objects)
 - v3.3 — Show Guide 체크박스
 - v3.2 — Capsule(알약형) 단면
@@ -184,6 +185,7 @@ Octane 팁: 반복 텍스처는 Image Texture의 Border mode를 Wrap around로. 
 
 ## 버전 기록
 
+- v3.6 업데이트 알림 다이얼로그 안정화
 - v3.5 자식 오브젝트 자동 Wrap Over 인식
 - v3.4 Auto Layer Overlap (코일 겹침 뱅킹), Wrap Over Objects (리본 간 회피)
 - v3.3 Show Guide 체크박스
