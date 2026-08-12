@@ -1,15 +1,17 @@
 # RibbonWrap
 
-**최신 버전: v3.8** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
+**최신 버전: v3.9** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
 
 타겟 오브젝트 주위에 레이캐스트 방식으로 리본을 감아주는 C4D 제너레이터 플러그인. 표면 노멀 기반으로 리본 방향이 자동 정렬되어 Rail 스플라인 없이 표면에 밀착됩니다.
 
-## v3.8 변경사항
+## v3.9 변경사항
 
-- **업데이트 알림 방식 재작성**: C4D 시작 완료 시점에 메인 스레드에서 직접 알림 창을 띄우는 방식으로 변경 — 알림이 뜨지 않던 문제 해결
-- **자식 오브젝트 자동 Wrap Over 인식 제거**: 의도치 않은 계층 참조를 막기 위해 리스트 방식(Wrap Over Objects)만 사용합니다
+- **그룹 이동 최적화**: 타겟과 리본들을 널로 묶어 함께 움직일 때 상대 관계가 변하지 않으면 재계산을 전혀 하지 않습니다 — 리본이 수십 개여도 그룹 이동이 가볍습니다 (콜라이더/변경 감지를 타겟 상대좌표 기준으로 전환)
+- **수동 업데이트 확인**: Extensions > "RibbonWrap: Check for Updates" — 즉시 확인하고 결과(최신/업데이트/실패)를 항상 창으로 알려줍니다
 
 ### 이전 버전 주요 기능
+
+- v3.8 — 시작 시 업데이트 알림 재작성, Wrap Over 리스트 일원화
 
 - v3.7 — 부모/상위 계층 이동 시 실시간 갱신, 콜라이더 분리 캐싱
 - v3.6 — 업데이트 알림 다이얼로그 안정화
@@ -180,6 +182,8 @@ Octane 팁: 반복 텍스처는 Image Texture의 Border mode를 Wrap around로. 
 
 ## 자동 업데이트 알림
 
+수동 확인: **Extensions > RibbonWrap: Check for Updates** — 네트워크/저장소 상태와 무관하게 결과를 항상 창으로 표시하므로, 시작 시 알림이 안 뜰 때 진단용으로 사용하세요.
+
 플러그인은 C4D 시작 시 GitHub의 버전 정보를 확인해서, 새 버전이 있으면 알림 창을 띄우고 다운로드 페이지를 열어줍니다. 인터넷이 안 되거나 저장소가 없으면 조용히 넘어갑니다 (시작 속도에 영향 없음, 백그라운드 4초 타임아웃).
 
 - 확인 주소: `raw.githubusercontent.com/kslee0350-hub/ribbonwrap/main/version.json`
@@ -187,6 +191,7 @@ Octane 팁: 반복 텍스처는 Image Texture의 Border mode를 Wrap around로. 
 
 ## 버전 기록
 
+- v3.9 그룹 이동 최적화, 수동 업데이트 확인 명령
 - v3.8 업데이트 알림 재작성, 자식 자동 인식 제거
 - v3.7 부모 이동 실시간 반영, 콜라이더 분리 캐싱
 - v3.6 업데이트 알림 다이얼로그 안정화
