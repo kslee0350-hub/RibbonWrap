@@ -1,5 +1,5 @@
 {
-  "version": "3.7",
+  "version": "3.8",
   "url": "https://github.com/kslee0350-hub/RibbonWrap",
-  "notes": "부모 이동 시 실시간 와핑 갱신, 콜라이더 분리 캐싱"
+  "notes": "업데이트 알림 방식 재작성, Wrap Over는 리스트 방식으로 일원화"
 }
