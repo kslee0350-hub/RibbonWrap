@@ -1,5 +1,5 @@
 {
-  "version": "3.9",
+  "version": "4.0",
   "url": "https://github.com/kslee0350-hub/RibbonWrap",
-  "notes": "그룹 이동 성능 최적화, 수동 업데이트 확인 명령 추가"
+  "notes": "Spherical 감기 모드 추가 (구형 오브젝트용)"
 }

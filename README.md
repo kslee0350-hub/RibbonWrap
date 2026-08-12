@@ -1,8 +1,14 @@
 # RibbonWrap
 
-**최신 버전: v3.9** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
+**최신 버전: v4.0** · Cinema 4D 2026.x · [다운로드 (RibbonWrap_latest.zip)](https://github.com/kslee0350-hub/RibbonWrap/raw/main/RibbonWrap_latest.zip)
 
 타겟 오브젝트 주위에 레이캐스트 방식으로 리본을 감아주는 C4D 제너레이터 플러그인. 표면 노멀 기반으로 리본 방향이 자동 정렬되어 Rail 스플라인 없이 표면에 밀착됩니다.
+
+## v4.0 변경사항
+
+- **Spherical 감기 모드**: 구/공 형태 오브젝트를 위한 모드. 극각 기준 균등 분배 + 중심을 향한 레이캐스트로, 극에서 극까지 오렌지 껍질 나선처럼 자연스럽게 감깁니다 (기존 원통형 투영의 극지방 어색함 해결)
+
+### 이전 버전
 
 ## v3.9 변경사항
 
@@ -56,6 +62,10 @@
 
 **Radius Horizontal / Radius Vertical**
 감김 단면(타원)의 가로/세로 반경. 레이가 이 타원 궤도에서 축을 향해 발사되므로, **타겟이 이 반경 안에 완전히 들어와야** 리본이 생성됩니다. 납작한 오브젝트(총기 등)는 두 값을 다르게 잡으면 레이 시작점이 표면에 가까워져 효율적입니다. 옆면 핸들 2개로 각각 드래그 조절 가능.
+
+**Wrap Mode (Cylindrical / Spherical)**
+- Cylindrical: 축 방향 균등 분배 + 방사형 레이 (기본) — 총기, 기둥, 팔다리 등 길쭉한 오브젝트
+- Spherical: 극각 균등 분배 + 중심 방향 레이 — 구, 공, 헬멧 등 둥근 오브젝트. Growth 애니메이션이 극→극 나선으로 자라며, Coil Tilt와 Section Shape는 이 모드에서 무시됩니다. 가이드에 자오선 원이 추가 표시됩니다.
 
 **Section Shape (Ellipse / Capsule)**
 감김 단면의 모양.
@@ -191,6 +201,7 @@ Octane 팁: 반복 텍스처는 Image Texture의 Border mode를 Wrap around로. 
 
 ## 버전 기록
 
+- v4.0 Spherical 감기 모드
 - v3.9 그룹 이동 최적화, 수동 업데이트 확인 명령
 - v3.8 업데이트 알림 재작성, 자식 자동 인식 제거
 - v3.7 부모 이동 실시간 반영, 콜라이더 분리 캐싱
